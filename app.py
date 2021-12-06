@@ -6,7 +6,7 @@ import cv2
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = './static/uploads/'
-model = load_model('BatchNormModel.h5')
+model = load_model('Modelv2.h5')
 
 class_dict = {0:'PNEUMONIA', 1:'NORMAL'}
 
