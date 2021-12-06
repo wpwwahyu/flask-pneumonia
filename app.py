@@ -6,14 +6,14 @@ import cv2
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = './static/uploads/'
-model = load_model('ModelBinary.h5')
+model = load_model('BatchNormModel.h5')
 
-class_dict = {0:'WithMask', 1:'WithoutMask'}
+class_dict = {0:'PNEUMONIA', 1:'NORMAL'}
 
 def predict_label(img_path):
     query = cv2.imread(img_path)
     output = query.copy()
-    query = cv2.resize(query, (100, 100))
+    query = cv2.resize(query, (200, 200))
     q = []
     q.append(query)
     q = np.array(q, dtype='float') / 255.0
