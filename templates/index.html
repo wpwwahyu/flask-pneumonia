@@ -11,10 +11,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Mask Detection Application</title>
+    <title>Pneumonia</title>
 </head>
 
 <body>
@@ -24,7 +23,7 @@
                 items-center
                 w-screen
                 h-screen
-                bg-red-200
+                bg-grey-200
             ">
         <main class="
                     flex flex-col
@@ -34,28 +33,26 @@
                     bg-white
                     rounded-lg
                 ">
-            <h1 class="text-3xl text-bold">Mask vs WithoutMask</h1>
+            <h1 class="text-3x2 text-bold">Prediksi Penyakit Pneumonia dari X-Ray Image</h1>
 
             {% if uploaded_image %}
-            <img src="{{ url_for('send_uploaded_image', filename=uploaded_image) }}"
-                class="mt-8 mb-4 h-48 border-8 border-gray-200 rounded-md" />
-            {% else %}
+            <img src="{{ url_for('send_uploaded_image', filename=uploaded_image) }}" class="mt-8 mb-4 h-48 border-8 border-gray-200 rounded-md" /> {% else %}
             <div class="
                         flex
                         justify-center
                         items-center
                         my-8
-                        w-48
-                        h-48
-                        border-8 border-gray-200
+                        w-128
+                        h-46
+                        border-8 border-gray-100
                         rounded-md
                     ">
                 <p class="text-center">
-                    Masukkan gambar 
+                    Masukkan gambar
                 </p>
             </div>
             {% endif %} {% if prediction %}
-            <p class="mb-8">Hasil Prediksi: {{prediction}}</p>
+            <p class="mb-8">Prediction: {{prediction}}</p>
             {% endif %}
 
             <form method="post" enctype="multipart/form-data" class="flex flex-col">
@@ -64,16 +61,15 @@
                             p-4
                             border-8 border-gray-200
                             rounded-md
-                            bg-gray-100
+                            bg-red-200
                         " />
-                <button type="submit" class="p-4 bg-red-600 text-white rounded-md">
-                    Prediksi Gambar
+                <button type="submit" class="p-4 bg-blue-400 text-white rounded-md">
+                    Predict
                 </button>
             </form>
         </main>
     </section>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
 </body>
 
