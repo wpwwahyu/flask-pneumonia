@@ -23,7 +23,7 @@
                 items-center
                 w-screen
                 h-screen
-                bg-grey-200
+                bg-black
             ">
         <main class="
                     flex flex-col
@@ -33,22 +33,22 @@
                     bg-white
                     rounded-lg
                 ">
-            <h1 class="text-3x2 text-bold">Prediksi Penyakit Pneumonia dari X-Ray Image</h1>
+            <h1 class="text-3xl text-bold">Prediksi Penyakit Pneumonia</h1>
 
             {% if uploaded_image %}
-            <img src="{{ url_for('send_uploaded_image', filename=uploaded_image) }}" class="mt-8 mb-4 h-48 border-8 border-gray-200 rounded-md" /> {% else %}
+            <img src="{{ url_for('send_uploaded_image', filename=uploaded_image) }}" class="mt-8 mb-4 h-48 border-8 border-red-200 rounded-md" /> {% else %}
             <div class="
                         flex
                         justify-center
                         items-center
                         my-8
-                        w-128
-                        h-46
-                        border-8 border-gray-100
+                        w-48
+                        h-48
+                        border-8 border-blue-200
                         rounded-md
                     ">
                 <p class="text-center">
-                    Masukkan gambar
+                    image
                 </p>
             </div>
             {% endif %} {% if prediction %}
@@ -61,10 +61,10 @@
                             p-4
                             border-8 border-gray-200
                             rounded-md
-                            bg-red-200
+                            bg-gray-100
                         " />
-                <button type="submit" class="p-4 bg-blue-400 text-white rounded-md">
-                    Predict
+                <button type="submit" class="p-4 bg-red-600 text-white rounded-md">
+                    Predict!
                 </button>
             </form>
         </main>
