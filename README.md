@@ -1,2 +1,2 @@
 # flask-pneumonia
- TKC CBIR Pneumonia
+Code for heroku - Pneumonia
